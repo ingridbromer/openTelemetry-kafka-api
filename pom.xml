@@ -90,11 +90,13 @@
 		<!-- New Dependencies -->
 
 		<!-- OpenTelemetry SDK -->
+		<!-- https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk -->
 		<dependency>
 			<groupId>io.opentelemetry</groupId>
 			<artifactId>opentelemetry-sdk</artifactId>
-			<version>1.11.0</version>
+			<version>1.24.0</version>
 		</dependency>
+
 
 		<!-- OpenTelemetry OTLP trace exporter using gRPC -->
 		<dependency>
@@ -112,15 +114,34 @@
 			<artifactId>opentelemetry-api</artifactId>
 			<version>1.4.1</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.opentelemetry.instrumentation/opentelemetry-kafka-clients-2.6 -->
 		<dependency>
-			<groupId>io.opentelemetry</groupId>
-			<artifactId>opentelemetry-sdk</artifactId>
-			<version>1.4.1</version>
+			<groupId>io.opentelemetry.instrumentation</groupId>
+			<artifactId>opentelemetry-kafka-clients-2.6</artifactId>
+			<version>1.19.0-alpha</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka-clients</artifactId>
-			<version>3.0.0</version>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>io.opentracing.contrib</groupId>
+			<artifactId>opentracing-kafka-client</artifactId>
+			<version>0.1.15</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-exporters-logging -->
+		<dependency>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-exporters-logging</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk-extension-autoconfigure -->
+		<dependency>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-sdk-extension-autoconfigure</artifactId>
+			<version>1.24.0-alpha</version>
 		</dependency>
 	</dependencies>
 

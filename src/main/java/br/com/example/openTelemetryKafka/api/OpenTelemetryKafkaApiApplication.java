@@ -9,5 +9,7 @@ public class OpenTelemetryKafkaApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OpenTelemetryKafkaApiApplication.class, args);
 	}
+	
+	
 
 }

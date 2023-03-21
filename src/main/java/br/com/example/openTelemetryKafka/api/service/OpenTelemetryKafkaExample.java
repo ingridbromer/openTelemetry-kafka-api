@@ -17,10 +17,9 @@ public class OpenTelemetryKafkaExample {
         kafkaProps.setProperty("bootstrap.servers", "localhost:29092");
         kafkaProps.setProperty("key.serializer", ByteArraySerializer.class.getName());
         kafkaProps.setProperty("value.serializer", ByteArraySerializer.class.getName());
-
         // Create Kafka producer
         KafkaProducer<byte[], byte[]> producer = new KafkaProducer<>(kafkaProps);
-
+        
         // Initialize OpenTelemetry exporter
         OtlpGrpcSpanExporter exporter = OtlpGrpcSpanExporter.builder()
                 .setEndpoint("localhost:55680")
@@ -30,6 +29,7 @@ public class OpenTelemetryKafkaExample {
         SdkTracerProvider tracerProvider = SdkTracerProvider.builder()
                 .addSpanProcessor(BatchSpanProcessor.builder(exporter).build())
                 .build();
+        
         OpenTelemetrySdk openTelemetry = OpenTelemetrySdk.builder()
                 .setTracerProvider(tracerProvider)
                 .buildAndRegisterGlobal();
@@ -45,3 +45,7 @@ public class OpenTelemetryKafkaExample {
         producer.close();
     }
 }
+
+// export OpenTelemetry data via OTLP
+// then use the Kafka Exporter (ou outro metodo mais atual) to write that data to a Kafka topic
+// visualizar resultados do kafka via elasticsearch
