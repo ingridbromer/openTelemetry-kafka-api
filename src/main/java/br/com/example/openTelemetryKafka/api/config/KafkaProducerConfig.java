@@ -12,7 +12,6 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
-import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentracing.contrib.kafka.TracingProducerInterceptor;
 
 @Configuration
@@ -42,12 +41,12 @@ public class KafkaProducerConfig {
         return props;
     }
 	@Bean
-	public ProducerFactory<String, SpanData> producerFactory() {
+	public ProducerFactory<String, String> producerFactory() {
 		return new DefaultKafkaProducerFactory<>(producerConfigs());
 	}
 
 	@Bean
-	public KafkaTemplate<String, SpanData> kafkaTemplate() {
+	public KafkaTemplate<String, String> kafkaTemplate() {
 		return new KafkaTemplate<>(producerFactory());
 	}
 

@@ -15,7 +15,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.example.openTelemetryKafka.api.config.AppConfigProperties;
 import br.com.example.openTelemetryKafka.api.exceptions.InvalidValueException;
-import io.opentelemetry.sdk.trace.data.SpanData;
 
 
 @Service
@@ -25,14 +24,14 @@ public class KafkaPublisherService {
 	private AppConfigProperties appProperties;
 	
 	@Autowired
-	private KafkaTemplate<String, SpanData> kafkaTemplate;
+	private KafkaTemplate<String, String> kafkaTemplate;
 
 	@Autowired
 	private ObjectMapper myMapper;
 
 	private static final Logger LOG = LoggerFactory.getLogger(KafkaPublisherService.class);
 
-	public void publish(ProducerRecord<String, SpanData> record) throws JsonProcessingException, InvalidValueException {
+	public void publish(ProducerRecord<String, String> record) throws JsonProcessingException, InvalidValueException {
 		LOG.info("Sending '{}' to topic = '{}' ", record, appProperties.getOutputKafkaTopic());
 			
 		Message<String> message = MessageBuilder.withPayload(myMapper.writeValueAsString(record))
