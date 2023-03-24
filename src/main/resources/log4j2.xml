@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    <OTLP name="otlp">
+      <Endpoint>collector:4317</Endpoint>
+      <TimeoutMs>30000</TimeoutMs>
+    </OTLP>
+  </Appenders>
+
+  <Loggers>
+    <Root level="info">
+      <AppenderRef ref="otlp" />
+    </Root>
+  </Loggers>
+</Configuration>

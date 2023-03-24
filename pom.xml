@@ -73,76 +73,74 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Open Telemetry and Kafka dependencies -->
-		<!-- Dependências do OpenTelemetry -->
-		<!--<dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-api</artifactId> 
-			<version>1.10.0</version> </dependency> -->
-		<!--<dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-sdk</artifactId> 
-			<version>1.10.0</version> </dependency> -->
-
-		<!-- Dependências do exportador Kafka -->
-		<!--<dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-exporter-otlp-trace</artifactId> 
-			<version>1.11.0</version> </dependency> -->
-
-		<!--<dependency> <groupId>io.grpc</groupId> <artifactId>grpc-core</artifactId> 
-			<version>1.41.0</version> </dependency> -->
-
-		<!-- New Dependencies -->
-
 		<!-- OpenTelemetry SDK -->
-		<!-- https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk -->
+		<!-- https://mvnrepository.com/artifact/io.opentelemetry.instrumentation/opentelemetry-spring-web-3.1 -->
+		<dependency>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-api</artifactId>
+			<version>1.24.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-exporter-otlp -->
+		<dependency>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-exporter-otlp</artifactId>
+			<version>1.24.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>io.opentelemetry</groupId>
 			<artifactId>opentelemetry-sdk</artifactId>
 			<version>1.24.0</version>
 		</dependency>
 
-
-		<!-- OpenTelemetry OTLP trace exporter using gRPC -->
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 		<dependency>
-			<groupId>io.opentelemetry</groupId>
-			<artifactId>opentelemetry-exporter-otlp-trace</artifactId>
-			<version>1.11.0</version>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.20.0</version>
 		</dependency>
-		<dependency>
-			<groupId>io.opentelemetry</groupId>
-			<artifactId>opentelemetry-sdk-trace</artifactId>
-			<version>1.5.0</version>
-		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.grpc/grpc-stub -->
 		<dependency>
 			<groupId>io.opentelemetry</groupId>
 			<artifactId>opentelemetry-api</artifactId>
-			<version>1.4.1</version>
+			<version>1.9.1</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.opentelemetry.instrumentation/opentelemetry-kafka-clients-2.6 -->
 		<dependency>
-			<groupId>io.opentelemetry.instrumentation</groupId>
-			<artifactId>opentelemetry-kafka-clients-2.6</artifactId>
-			<version>1.19.0-alpha</version>
-			<scope>runtime</scope>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-sdk</artifactId>
+			<version>1.9.1</version>
 		</dependency>
+		<dependency>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-exporter-otlp</artifactId>
+			<version>1.9.1</version>
+		</dependency>
+
+		<!-- gRPC -->
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-netty</artifactId>
+			<version>1.42.1</version>
+		</dependency>
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-protobuf</artifactId>
+			<version>1.42.1</version>
+		</dependency>
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-stub</artifactId>
+			<version>1.42.1</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
-			<groupId>io.opentracing.contrib</groupId>
-			<artifactId>opentracing-kafka-client</artifactId>
-			<version>0.1.15</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-exporters-logging -->
-		<dependency>
-			<groupId>io.opentelemetry</groupId>
-			<artifactId>opentelemetry-exporters-logging</artifactId>
-			<version>0.9.1</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk-extension-autoconfigure -->
-		<dependency>
-			<groupId>io.opentelemetry</groupId>
-			<artifactId>opentelemetry-sdk-extension-autoconfigure</artifactId>
-			<version>1.24.0-alpha</version>
-		</dependency>
+
+
 	</dependencies>
 
 	<build>
